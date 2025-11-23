@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Artist Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      overflow-x: hidden;
+    }
+
+    /* Fixed center text */
+    .center-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #f4f4f4;
+      text-align: center;
+      z-index: 10;
+      font-size: 3rem;
+      text-shadow: 0 0 12px rgba(0,0,0,0.6);
+      pointer-events: none;
+    }
+
+    /* Full-screen sections for images */
+    .section {
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Top menu */
+    nav {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      z-index: 20;
+      display: flex;
+      gap: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.1rem;
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    /* Show menu after scroll */
+    body.scrolled nav {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-text">Are you having fun?</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Image sections (replace URLs) -->
+  <div class="section" style="background-image: url('./imgs_crop/babyface_crop.jpg');"></div>
+  <div class="section" style="background-image: url('./imgs_crop/stcath_crop.jpg');"></div>
+  <div class="section" style="background-image: url('./imgs_crop/screamguy_crop.jpg');"></div>
+
+  <script>
+    // Show menu after a bit of scrolling
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
